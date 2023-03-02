@@ -59,20 +59,20 @@ namespace CircustreinLogic.Classes.Wagons
         }
 
         //TODO: Steeds controleren per dier of die nog in de wagon past en of het dier niet word opgegeten (geen lijst meegeven).
-        //public void AddAnimalsToWagon(List<Animal> animals)
-        //{
-        //    foreach (Animal animal in animals)
-        //    {
-        //        if (Capacity - (int)AnimalSize.Small > 0 || Capacity - (int)AnimalSize.Medium > 0 || Capacity - (int)AnimalSize.Large > 0)
-        //        {
-        //            Animals.Add(animal);
-        //        }
-        //        if (Capacity < 10)
-        //        {
-        //            new Wagon(animal);
-        //        }
-        //    }
-        //}
+        public void AddAnimalsToWagon(List<Animal> animals)
+        {
+            foreach (Animal animal in animals)
+            {
+                if (Capacity - (int)AnimalSize.Small > 0 || Capacity - (int)AnimalSize.Medium > 0 || Capacity - (int)AnimalSize.Large > 0)
+                {
+                    Animals.Add(animal);
+                }
+                if (Capacity < 10)
+                {
+                    new Wagon(animal);
+                }
+            }
+        }
 
         public void CheckAnimalCompatibility(List<Animal> animals)
         {
