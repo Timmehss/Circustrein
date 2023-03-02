@@ -11,7 +11,7 @@ namespace CircustreinLogic.Classes.Wagons
 {
     public class Wagon
     {
-        public List<Animal> Animals { get; set; }
+        public List<Animal> AnimalsInWagon = new List<Animal>();
 
         public int Capacity = 10;
 
@@ -21,25 +21,26 @@ namespace CircustreinLogic.Classes.Wagons
 
         public Wagon() {  }
 
-        public Wagon(List<Animal> animals)
+        public Wagon(List<Animal> Animals)
         {
-            ChangeWagonCapacity(animals);
+            ChangeWagonCapacity(Animals);
             //CheckAnimalCompatibility();
-            AddAnimalsToWagon(animals);              
+            //AddAnimalsToWagon(animals);              
         }
 
-        public Wagon(Animal animal)
-        {
-            this.Animals.Add(animal); 
-        }
-
+        //public Wagon(List<Animal> Animals)
+        //{
+        //    ChangeWagonCapacity(Animals);
+        //}
 
         //TODO: Controleren op capacity 
         public void ChangeWagonCapacity(List<Animal> Animals)
         {
             foreach (Animal animal in Animals)
             {
-                while (Capacity >= 0)
+                int CapacityCheck = (int)(Capacity - animal.animalSize);
+
+                if (CapacityCheck >= 0)
                 {
                     if (animal.animalSize == AnimalSize.Small)
                     {
@@ -53,44 +54,19 @@ namespace CircustreinLogic.Classes.Wagons
                     {
                         Capacity = Capacity - LARGE_SIZE_POINTS;
                     }
-                    Animals.Add(animal);
+                    AnimalsInWagon.Add(animal);
+                    //AnimalsInWagon.Remove(animal);
+                }
+                if (CapacityCheck < 0)
+                {
+                    foreach (Animal animal1 in AnimalsInWagon)
+                    {
+                        Animals.Remove(animal1);
+                    }
+
+                    new Wagon(Animals);
                 }
             }
         }
-
-        //TODO: Steeds controleren per dier of die nog in de wagon past en of het dier niet word opgegeten (geen lijst meegeven).
-        public void AddAnimalsToWagon(List<Animal> animals)
-        {
-            foreach (Animal animal in animals)
-            {
-                if (Capacity - (int)AnimalSize.Small > 0 || Capacity - (int)AnimalSize.Medium > 0 || Capacity - (int)AnimalSize.Large > 0)
-                {
-                    Animals.Add(animal);
-                }
-                if (Capacity < 10)
-                {
-                    new Wagon(animal);
-                }
-            }
-        }
-
-        public void CheckAnimalCompatibility(List<Animal> animals)
-        {
-
-        }
-
-        //public void ShowAllWagonsAndAnimals()
-        //{
-        //    int i = 0;
-        //    foreach (Wagon wagon in Wagons)
-        //    {
-        //        i++;
-        //        Console.WriteLine($"Wagon ({i})");
-        //        foreach (Animal animal in Animals)
-        //        {
-        //            Console.WriteLine($"{animal.animalType} ({animal.animalSize})");
-        //        }
-        //    }
-        //}
     }
 }

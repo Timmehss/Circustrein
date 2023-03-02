@@ -34,3 +34,15 @@ C:\Users\Tim\Desktop\School\Software S2\Algoritmiek\Circustrein2\LogicCircustrai
 C:\Users\Tim\Desktop\School\Software S2\Algoritmiek\Circustrein2\LogicCircustrain\bin\Debug\net7.0\LogicCircustrain.dll
 C:\Users\Tim\Desktop\School\Software S2\Algoritmiek\Circustrein2\LogicCircustrain\bin\Debug\net7.0\LogicCircustrain.pdb
 C:\Users\Tim\Desktop\School\Software S2\Algoritmiek\Circustrein2\LogicCircustrain\obj\Debug\net7.0\ref\LogicCircustrain.dll
+D:\School\Visual Studio\Circustrein\LogicCircustrain\bin\Debug\net7.0\LogicCircustrain.deps.json
+D:\School\Visual Studio\Circustrein\LogicCircustrain\bin\Debug\net7.0\LogicCircustrain.dll
+D:\School\Visual Studio\Circustrein\LogicCircustrain\bin\Debug\net7.0\LogicCircustrain.pdb
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.csproj.AssemblyReference.cache
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.GeneratedMSBuildEditorConfig.editorconfig
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.AssemblyInfoInputs.cache
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.AssemblyInfo.cs
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.csproj.CoreCompileInputs.cache
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.dll
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\refint\LogicCircustrain.dll
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\LogicCircustrain.pdb
+D:\School\Visual Studio\Circustrein\LogicCircustrain\obj\Debug\net7.0\ref\LogicCircustrain.dll

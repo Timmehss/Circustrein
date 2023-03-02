@@ -13,7 +13,7 @@ namespace CircustreinLogic.Classes
     {
         public bool ProceedAdding(string response)
         {
-            if (response.ToLower() == "continue")
+            if (response.ToLower() == "yes")
             {
                 return true;
             }

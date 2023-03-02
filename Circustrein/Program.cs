@@ -5,7 +5,7 @@ using LogicCircustrain.Classes.Train;
 
 List<Train> trains= new List<Train>();
 List<Wagon> wagons = new List<Wagon>();
-List<Animal> animals = new List<Animal>();
+List<Animal> Animals = new List<Animal>();
 
 Functions functions = new Functions();
 Train train = new Train();
@@ -27,7 +27,7 @@ while (proceed == false)
     Console.WriteLine("Choose a size (Small, Medium, Large)");
     newAnimalSize = Console.ReadLine();
 
-    Console.WriteLine($"You want to add a {newAnimalType} with a size of {newAnimalSize}? (Continue / Restart)");
+    Console.WriteLine($"You want to add a {newAnimalType} with a size of {newAnimalSize}? (Yes / Restart)");
     response = Console.ReadLine();
 
     proceed = functions.ProceedAdding(response);
@@ -35,7 +35,7 @@ while (proceed == false)
 
 if (proceed == true)
 {
-    animals.Add(new Animal(newAnimalType, newAnimalSize));
+    Animals.Add(new Animal(newAnimalType, newAnimalSize));
 
     Console.WriteLine("Would you like to add another animal? (Yes / No)");
 
@@ -53,12 +53,12 @@ if (proceed == true)
             Console.WriteLine("Choose a size (Small, Medium, Large)");
             newAnimalSize = Console.ReadLine();
 
-            Console.WriteLine($"You want to add a {newAnimalType} with a size of {newAnimalSize}? (Continue / Restart)");
+            Console.WriteLine($"You want to add a {newAnimalType} with a size of {newAnimalSize}? (Yes / Restart)");
             response = Console.ReadLine();
 
-            if (response.ToLower() == "continue")
+            if (response.ToLower() == "yes")
             {
-                animals.Add(new Animal(newAnimalType, newAnimalSize));
+                Animals.Add(new Animal(newAnimalType, newAnimalSize));
 
                 Console.WriteLine("Would you like to add another animal? (Yes / No)");
                 response = Console.ReadLine();
@@ -84,7 +84,7 @@ if (proceed == true)
 
         if (response.ToLower() == "yes")
         {
-            animal.ShowAllAnimalsInList(animals);            
+            animal.ShowAllAnimalsInList(Animals);            
         }
         //TODO: create a train and not wagons
         Console.WriteLine("Would you like to create a train with wagons and add the animals? (Yes / No)");
@@ -92,10 +92,8 @@ if (proceed == true)
 
         if (response.ToLower() == "yes")
         {
-            //Voer functie uit die de dieren aan de wagon doet toevoegen.
-            //Nieuwe wagon aanmaken en de dieren erin stoppen
             //Trein aanmaken en de wagon met de bijbehorende dieren erin stoppen.
-            new Train(animals);
+            new Train(Animals);
             
 
         }
