@@ -10,30 +10,33 @@ namespace LogicCircustrain.Classes.Train
 {
     public class Train
     {
-        private List<Wagon> wagons = new List<Wagon>();
+        private List<Wagon> Wagons = new List<Wagon>();
 
         public Train() { }
 
-        //TODO: List van dieren meegeven aan de constructor. 
-        //TODO: Start algorithme.
-        //TODO: Hier gaan controleren of de wagon vol zit, zo ja nieuwe wagon toevoegen.
+        //Eerste wagon word toegevoegd aan de wagons lijst, de tweede die word aangemaakt als de eerste vol zit...
+        //Word nog niet toegevoegd aan de lijst.
         public Train(List<Animal> animals) 
         {
-            wagons.Add(new Wagon(animals)); 
+            Wagons.Add(new Wagon(animals)); 
         }
 
-        //public void ShowAllWagonsAndAnimals()
-        //{
-        //    int i = 0;
-        //    foreach (Wagon wagon in wagons)
-        //    {
-        //        i++;
-        //        Console.WriteLine($"Wagon ({i})");
-        //        foreach (Animal animal in Animals)
-        //        {
-        //            Console.WriteLine($"{animal.animalType} ({animal.animalSize})");
-        //        }
-        //    }
-        //}
+        public void AddWagonsToTrain(List<Wagon> wagons)
+        {
+        }
+
+        public void ShowAllWagonsAndAnimals()
+        {
+            int i = 0;
+            foreach (Wagon wagon in Wagons)
+            {
+                i++;
+                Console.WriteLine($"Wagon ({i})");
+                //foreach (Animal animal in Animals)
+                //{
+                //    Console.WriteLine($"{animal.animalType} ({animal.animalSize})");
+                //}
+            }
+        }
     }
 }

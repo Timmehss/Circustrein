@@ -86,16 +86,13 @@ if (proceed == true)
         {
             animal.ShowAllAnimalsInList(Animals);            
         }
-        //TODO: create a train and not wagons
+
         Console.WriteLine("Would you like to create a train with wagons and add the animals? (Yes / No)");
         response = Console.ReadLine();
 
         if (response.ToLower() == "yes")
         {
-            //Trein aanmaken en de wagon met de bijbehorende dieren erin stoppen.
-            new Train(Animals);
-            
-
+            new Train(Animals);           
         }
         if (response.ToLower() == "no")
         {
@@ -103,6 +100,6 @@ if (proceed == true)
         }
 
         Console.WriteLine("Here are you wagon(s) and the animals inside of them:");
-        //wagon.ShowAllWagonsAndAnimals();
+        train.ShowAllWagonsAndAnimals();
     }
 }

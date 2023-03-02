@@ -11,7 +11,7 @@ namespace CircustreinLogic.Classes.Wagons
 {
     public class Wagon
     {
-        public List<Animal> AnimalsInWagon = new List<Animal>();
+        private List<Animal> AnimalsInWagon = new List<Animal>();
 
         public int Capacity = 10;
 
@@ -23,17 +23,9 @@ namespace CircustreinLogic.Classes.Wagons
 
         public Wagon(List<Animal> Animals)
         {
-            ChangeWagonCapacity(Animals);
-            //CheckAnimalCompatibility();
-            //AddAnimalsToWagon(animals);              
+            ChangeWagonCapacity(Animals);              
         }
 
-        //public Wagon(List<Animal> Animals)
-        //{
-        //    ChangeWagonCapacity(Animals);
-        //}
-
-        //TODO: Controleren op capacity 
         public void ChangeWagonCapacity(List<Animal> Animals)
         {
             foreach (Animal animal in Animals)
@@ -55,16 +47,18 @@ namespace CircustreinLogic.Classes.Wagons
                         Capacity = Capacity - LARGE_SIZE_POINTS;
                     }
                     AnimalsInWagon.Add(animal);
-                    //AnimalsInWagon.Remove(animal);
                 }
                 if (CapacityCheck < 0)
                 {
-                    foreach (Animal animal1 in AnimalsInWagon)
+                    foreach (Animal animal1 in AnimalsInWagon.ToList())
                     {
                         Animals.Remove(animal1);
                     }
 
                     new Wagon(Animals);
+
+                    //return anders kreeg ik een error dat de Animals collectie was aangepast.
+                    return;
                 }
             }
         }
