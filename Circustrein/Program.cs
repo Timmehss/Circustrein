@@ -3,14 +3,15 @@ using CircustreinLogic.Classes;
 using CircustreinLogic.Classes.Wagons;
 using LogicCircustrain.Classes.Train;
 
-List<Train> trains= new List<Train>();
-List<Wagon> wagons = new List<Wagon>();
+//TODO: Class diagram (foto) toepassen op mijn eigen classen structuur.
+//TODO: Abstracte klassen toepassen op carnivore en herbivore. WouldEat methode maken om te controleren en deze
+//in de carnivore klassen overriden.
+
+Train train = new Train();
+Animal animal = new Animal();
 List<Animal> Animals = new List<Animal>();
 
 Functions functions = new Functions();
-Train train = new Train();
-Wagon wagon = new Wagon();
-Animal animal = new Animal();
 
 string? newAnimalType = null;
 string? newAnimalSize = null;

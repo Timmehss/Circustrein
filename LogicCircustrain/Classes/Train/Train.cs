@@ -23,6 +23,7 @@ namespace LogicCircustrain.Classes.Train
 
         public void AddWagonsToTrain(List<Wagon> wagons)
         {
+
         }
 
         public void ShowAllWagonsAndAnimals()
