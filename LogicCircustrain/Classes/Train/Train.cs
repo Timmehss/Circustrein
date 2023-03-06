@@ -11,20 +11,17 @@ namespace LogicCircustrain.Classes.Train
     public class Train
     {
         private List<Wagon> Wagons = new List<Wagon>();
-
         public Train() { }
 
-        //Eerste wagon word toegevoegd aan de wagons lijst, de tweede die word aangemaakt als de eerste vol zit...
-        //Word nog niet toegevoegd aan de lijst.
         public Train(List<Animal> animals) 
         {
             Wagons.Add(new Wagon(animals)); 
         }
 
-        public void AddWagonsToTrain(List<Wagon> wagons)
-        {
-
-        }
+        //public void AddWagonsToTrain(Wagon newWagon)
+        //{
+        //    Wagons.Add(newWagon);
+        //}
 
         public void ShowAllWagonsAndAnimals()
         {

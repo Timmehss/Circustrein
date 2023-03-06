@@ -2,13 +2,13 @@
 using CircustreinLogic.Classes;
 using CircustreinLogic.Classes.Wagons;
 using LogicCircustrain.Classes.Train;
+using LogicCircustrain.Classes.Animals.Species;
 
 //TODO: Class diagram (foto) toepassen op mijn eigen classen structuur.
 //TODO: Abstracte klassen toepassen op carnivore en herbivore. WouldEat methode maken om te controleren en deze
 //in de carnivore klassen overriden.
 
 Train train = new Train();
-Animal animal = new Animal();
 List<Animal> Animals = new List<Animal>();
 
 Functions functions = new Functions();
@@ -36,7 +36,14 @@ while (proceed == false)
 
 if (proceed == true)
 {
-    Animals.Add(new Animal(newAnimalType, newAnimalSize));
+    if (newAnimalType == "carnivore")
+    {
+        Animals.Add(new Carnivore(newAnimalSize));
+    }
+    if (newAnimalType == "herbivore")
+    {
+        Animals.Add(new Herbivore(newAnimalSize));
+    }
 
     Console.WriteLine("Would you like to add another animal? (Yes / No)");
 
@@ -59,7 +66,14 @@ if (proceed == true)
 
             if (response.ToLower() == "yes")
             {
-                Animals.Add(new Animal(newAnimalType, newAnimalSize));
+                if (newAnimalType == "carnivore")
+                {
+                    Animals.Add(new Carnivore(newAnimalSize));
+                }
+                if (newAnimalType == "herbivore")
+                {
+                    Animals.Add(new Herbivore(newAnimalSize));
+                }                
 
                 Console.WriteLine("Would you like to add another animal? (Yes / No)");
                 response = Console.ReadLine();
@@ -80,12 +94,13 @@ if (proceed == true)
     if (response.ToLower() == "no")
     {
         continueAdding = false;
+
         Console.WriteLine("Would you like to see a list of all the animals that you have added to the list? (Yes / No)");
         response = Console.ReadLine();
 
         if (response.ToLower() == "yes")
         {
-            animal.ShowAllAnimalsInList(Animals);            
+            functions.ShowAllAnimalsInList(Animals);         
         }
 
         Console.WriteLine("Would you like to create a train with wagons and add the animals? (Yes / No)");

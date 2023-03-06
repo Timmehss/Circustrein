@@ -19,13 +19,17 @@ namespace CircustreinLogic.Classes.Wagons
         private int MEDIUM_SIZE_POINTS = 3;
         private int LARGE_SIZE_POINTS = 5;
 
+        //Train train = new Train();
+
         public Wagon() {  }
 
-        public Wagon(List<Animal> Animals)
+        public Wagon(List<Animal> Animals) 
         {
-            ChangeWagonCapacity(Animals);              
+            ChangeWagonCapacity(Animals);
         }
 
+        //Train.AddWagon();
+        //Animal.CanEat();
         public void ChangeWagonCapacity(List<Animal> Animals)
         {
             foreach (Animal animal in Animals)
@@ -56,8 +60,8 @@ namespace CircustreinLogic.Classes.Wagons
                     }
 
                     new Wagon(Animals);
+                    //train.AddWagonsToTrain(newWagon);
 
-                    //return anders kreeg ik een error dat de Animals collectie was aangepast.
                     return;
                 }
             }

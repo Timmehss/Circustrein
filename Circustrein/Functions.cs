@@ -25,5 +25,13 @@ namespace CircustreinLogic.Classes
             Console.WriteLine("Dat is geen geldig antwoord!");
             return false;
         }
+
+        public void ShowAllAnimalsInList(List<Animal> animals)
+        {
+            foreach (Animal animal in animals)
+            {
+                Console.WriteLine($"{animal.animalType} ({animal.animalSize})");
+            }
+        }
     }
 }

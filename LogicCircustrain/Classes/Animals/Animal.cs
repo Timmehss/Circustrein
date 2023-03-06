@@ -8,30 +8,22 @@ using LogicCircustrain.Classes.Animals;
 
 namespace CircustreinLogic.Classes.Animals
 {
-    public class Animal
+    public abstract class Animal
     {
         public AnimalType animalType { get; set; }
         public AnimalSize animalSize { get; set; }
 
         public Animal() { } 
 
-        public Animal(string newAnimalType, string newAnimalSize)
+        public Animal(string newAnimalSize)
         {
-            SetAnimalTypeAndSize(newAnimalType, newAnimalSize);
+            SetAnimalTypeAndSize(newAnimalSize);
         }
 
-        public void SetAnimalTypeAndSize(string newAnimalType, string newAnimalSize)
-        {
-            //Set the species of the animal
-            if (newAnimalType.ToLower() == "carnivore")
-            {
-                this.animalType = AnimalType.Carnivore;
-            }
-            if (newAnimalType.ToLower() == "herbivore")
-            {
-                this.animalType = AnimalType.Herbivore;
-            }
+        public abstract bool CanEat(List<Animal> animals);
 
+        public void SetAnimalTypeAndSize(string newAnimalSize)
+        {
             //Set the size of the animal
             if (newAnimalSize.ToLower() == "small")
             {
@@ -44,14 +36,6 @@ namespace CircustreinLogic.Classes.Animals
             if (newAnimalSize.ToLower() == "large")
             {
                 this.animalSize = AnimalSize.Large;
-            }
-        }
-
-        public void ShowAllAnimalsInList(List<Animal> animals)
-        {
-            foreach (Animal animal in animals)
-            {
-                Console.WriteLine($"{animal.animalType} ({animal.animalSize})");
             }
         }
     }
